@@ -10,12 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ButtonProtocolName
-- (void)buttonWasPressed;
-@end
+@protocol ButtonProtocolName;
 
 @interface BackgroundView : UIView
 @property (nonatomic, weak) id <ButtonProtocolName> delegate;
+@end
+
+@protocol ButtonProtocolName
+- (void)buttonWasPressed;
 @end
 
 NS_ASSUME_NONNULL_END
