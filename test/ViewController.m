@@ -20,7 +20,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.backgroundView = [[BackgroundView alloc] initWithFrame:self.view.frame];
     self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.backgroundView.delegate = self;
     [self.view addSubview:self.backgroundView];
 }
+
+- (void)buttonWasPressed {
+    NSLog(@"%@", @"button pressed");
+}
+
 
 @end

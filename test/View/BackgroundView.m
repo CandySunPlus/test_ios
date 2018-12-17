@@ -29,6 +29,7 @@
             [button.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
             [button setImage:[UIImage imageNamed:@"wechat"] forState:UIControlStateNormal];
             [button setImage:[UIImage imageNamed:@"wechat"] forState:UIControlStateHighlighted];
+            [button addTarget:self.delegate action:@selector(buttonWasPressed) forControlEvents:UIControlEventTouchUpInside];
             button;
         });
         [self addSubview:_button];

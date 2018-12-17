@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ButtonProtocolName>
 
 
 @end

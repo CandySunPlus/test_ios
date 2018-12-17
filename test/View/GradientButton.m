@@ -54,12 +54,13 @@
     self.shadowLayer.masksToBounds = NO;
     if (spread) {
         __block CGFloat _spread = spread;
-        __weak GradientButton *weakSelf = self;
+        __weak __typeof(self) weakSelf = self;
         self.spreadShadow = ^(void) {
-            weakSelf.shadowLayer.shadowRadius = blur + _spread;
             CGRect rect = CGRectInset(weakSelf.bounds, -_spread, -_spread);
             CGPathRef shadowPathRef = [UIBezierPath bezierPathWithRect:rect].CGPath;
-            weakSelf.shadowLayer.shadowPath = shadowPathRef;
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            strongSelf.shadowLayer.shadowPath = shadowPathRef;
+            strongSelf.shadowLayer.shadowRadius = blur + _spread;
         };
     }
     [self.layer insertSublayer:self.shadowLayer atIndex:0];
