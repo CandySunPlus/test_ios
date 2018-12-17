@@ -5,12 +5,12 @@ DEPENDENCIES:
   - Masonry (~> 1.0)
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/cocoapods/specs.git:
+  https://github.com/cocoapods/specs.git:
     - Masonry
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: ef662eaebc84733d6d0df54fa0136fb755a5a0f6
+PODFILE CHECKSUM: ed5162d24d39adea51aa1c66b3824e588a4ebaf7
 
 COCOAPODS: 1.5.3
