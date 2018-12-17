@@ -30,7 +30,7 @@
 - (void)setGradientWithDeg:(float)deg startColor:(UIColor *)startColor endColor:(UIColor *)endColor {
     self.gradientLayer.frame = self.bounds;
     self.gradientLayer.masksToBounds = YES;
-    self.gradientLayer.colors = @[(id)startColor.CGColor, (id)endColor.CGColor];
+    self.gradientLayer.colors = @[(__bridge id)startColor.CGColor, (__bridge id)endColor.CGColor];
     float x = deg / 360.0f;
     CGPoint startPoint = CGPointMake(
             powf(sinf((float) (2 * M_PI * ((x + 0.75) / 2))), 2),
