@@ -21,8 +21,6 @@
     if (self) {
         self.gradientLayer = [[CAGradientLayer alloc] init];
         self.shadowLayer = [[CALayer alloc] init];
-        [self setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
-        [self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
     }
     return self;
 }
@@ -69,6 +67,14 @@
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     self.shadowLayer.cornerRadius = cornerRadius;
     self.gradientLayer.cornerRadius = cornerRadius;
+}
+
+- (void)setImage:(nullable UIImage *)image forState:(UIControlState)state {
+    [super setImage:image forState:state];
+    if (image) {
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
+    }
 }
 
 - (void)layoutSubviews {
